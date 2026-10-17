@@ -72,7 +72,7 @@ describe('api client', () => {
     fetchMock.mockResolvedValueOnce(
       json(400, { error: { code: 'VALIDATION_FAILED', message: 'Validation failed', details: { issues: [{ path: 'email', message: 'Bad email' }] } } }),
     );
-    const err = await api('/auth/signup', { method: 'POST', body: {}, noRefresh: true }).catch((e) => e as ApiError);
+    const err = (await api('/auth/signup', { method: 'POST', body: {}, noRefresh: true }).catch((e: unknown) => e)) as ApiError;
     expect(err).toBeInstanceOf(ApiError);
     expect(err.code).toBe('VALIDATION_FAILED');
     expect(err.fieldErrors).toEqual({ email: 'Bad email' });
