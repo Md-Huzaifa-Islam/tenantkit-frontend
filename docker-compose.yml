@@ -1,0 +1,20 @@
+name: tenantkit-frontend
+
+# The web app proxies /api/v1/* to the backend. Start the backend repo's compose
+# first: it creates the `tenantkit-net` network and exposes the API as `api`.
+services:
+  web:
+    build:
+      context: .
+      args:
+        API_INTERNAL_URL: ${API_INTERNAL_URL:-http://api:4000}
+    image: tenantkit-web:local
+    restart: unless-stopped
+    ports:
+      - '${WEB_PORT:-3000}:3000'
+    networks: [tenantkit]
+
+networks:
+  tenantkit:
+    name: tenantkit-net
+    external: true
