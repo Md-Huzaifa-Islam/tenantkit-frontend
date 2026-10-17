@@ -28,3 +28,6 @@ blob-report/
 *.log
 .vscode/
 .idea/
+
+# CI checkout of the backend repo
+.backend/
