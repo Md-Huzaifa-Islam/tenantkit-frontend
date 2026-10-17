@@ -8,6 +8,7 @@ const inter = Inter({ subsets: ['latin'], variable: '--font-inter', display: 'sw
 export const metadata: Metadata = {
   title: { default: 'TenantKit', template: '%s · TenantKit' },
   description: 'Multi-tenant SaaS starter with workspaces, roles, billing and audit logs.',
+  icons: { icon: '/favicon.svg' },
 };
 
 export const viewport: Viewport = {
