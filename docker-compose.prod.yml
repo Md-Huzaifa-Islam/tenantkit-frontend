@@ -1,0 +1,14 @@
+# Production override (VPS):
+#   docker compose -f docker-compose.yml -f docker-compose.prod.yml up -d --build --wait
+# No host port: Caddy (on the external `proxy` network) reaches the app as tenantkit-web:3000.
+services:
+  web:
+    ports: !reset []
+    networks:
+      tenantkit: {}
+      proxy:
+        aliases: [tenantkit-web]
+
+networks:
+  proxy:
+    external: true
