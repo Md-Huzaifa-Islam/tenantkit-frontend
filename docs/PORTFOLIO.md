@@ -3,6 +3,10 @@
 ## Title
 TenantKit: Multi-Tenant SaaS Platform | Next.js, NestJS, PostgreSQL RLS, Stripe
 
+## Live demo
+
+**https://tenantkit.huzaifaswe.com**: `demo@tenantkit.dev` / `Demo1234!` (workspace owner). Runs on the owner's VPS with seeded demo data; Stripe and email use mock providers.
+
 ## Case study
 
 **Problem:** Every SaaS MVP needs teams, roles, billing and strict data isolation. Building these per project is slow and error-prone.
@@ -24,4 +28,4 @@ Next.js · NestJS · TypeScript · PostgreSQL · Row-Level Security · Prisma ·
 7. **Terminal**: `pnpm test` in the backend → isolation and RLS suites passing.
 
 ## Still needed from you
-- A live demo URL (nothing is deployed yet), the Loom recording, and uploading the screenshots in `docs/screenshots/`.
+- The Loom recording, and uploading the screenshots in `docs/screenshots/`. (Live demo done 2026-11-06: https://tenantkit.huzaifaswe.com, `demo@tenantkit.dev` / `Demo1234!`, mock Stripe and email.)
